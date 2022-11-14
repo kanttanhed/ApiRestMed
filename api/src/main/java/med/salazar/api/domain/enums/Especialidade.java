@@ -1,4 +1,4 @@
-package med.salazar.api.medico;
+package med.salazar.api.domain.enums;
 
 public enum Especialidade {
     ORTOPEDIA,

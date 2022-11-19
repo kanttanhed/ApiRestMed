@@ -1,5 +1,6 @@
 package med.salazar.api.controller;
 
+import jakarta.validation.Valid;
 import med.salazar.api.domain.dtos.DadosCadastroMedico;
 import med.salazar.api.domain.entity.Medico;
 import med.salazar.api.repository.MedicoRepository;
@@ -18,7 +19,7 @@ public class MedicoController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     @Transactional
-    public void cadastrar(@RequestBody DadosCadastroMedico dados) {
+    public void cadastrar(@RequestBody @Valid DadosCadastroMedico dados) {
         medicoRepository.save(new Medico(dados));
     }
 }

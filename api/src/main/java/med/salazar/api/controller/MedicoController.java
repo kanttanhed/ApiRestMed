@@ -6,6 +6,8 @@ import med.salazar.api.domain.dtos.DadosListagemMedico;
 import med.salazar.api.domain.entity.Medico;
 import med.salazar.api.repository.MedicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -20,11 +22,8 @@ public class MedicoController {
     private MedicoRepository medicoRepository;
 
     @GetMapping
-    public List<DadosListagemMedico> listar(){
-       return medicoRepository.findAll()
-                               .stream()
-                               .map(DadosListagemMedico::new)
-                               .toList();
+    public Page<DadosListagemMedico> listar(Pageable pagina){
+       return medicoRepository.findAll(pagina).map(DadosListagemMedico::new);
     }
 
     @PostMapping

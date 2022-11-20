@@ -1,6 +1,7 @@
 package med.salazar.api.controller;
 
 import jakarta.validation.Valid;
+import med.salazar.api.domain.dtos.DadosAtualizacaoMedico;
 import med.salazar.api.domain.dtos.DadosCadastroMedico;
 import med.salazar.api.domain.dtos.DadosListagemMedico;
 import med.salazar.api.domain.entity.Medico;
@@ -32,5 +33,17 @@ public class MedicoController {
     @Transactional
     public void cadastrar(@RequestBody @Valid DadosCadastroMedico dados) {
         medicoRepository.save(new Medico(dados));
+    }
+
+    @PutMapping
+    @Transactional
+    public void ataulizar(@RequestBody @Valid DadosAtualizacaoMedico dados){
+        var medico= medicoRepository.getReferenceById(dados.id());
+        medico.atualizarInformacao(dados);
+    }
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void excluir(@PathVariable Long id){
+        medicoRepository.deleteById(id);
     }
 }

@@ -14,6 +14,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/medico")
 public class MedicoController {
@@ -24,6 +26,10 @@ public class MedicoController {
     @GetMapping
     public Page<DadosListagemMedico> listar(@PageableDefault(size = 10, sort = {"nome"}) Pageable pagina){
        return medicoRepository.findAllByAtivoTrue(pagina).map(DadosListagemMedico::new);
+    }
+    @GetMapping("/{medicoId}")
+    public Optional<DadosListagemMedico> listarPorId(@PathVariable Long medicoId){
+        return medicoRepository.findById(medicoId).map(DadosListagemMedico::new);
     }
 
     @PostMapping

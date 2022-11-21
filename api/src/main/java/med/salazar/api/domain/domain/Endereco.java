@@ -1,4 +1,4 @@
-package med.salazar.api.domain.entity;
+package med.salazar.api.domain.domain;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;

@@ -6,8 +6,6 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 
-import java.util.UUID;
-
 public record DadosCadastroPaciente(
         @NotBlank String nome,
         @NotBlank
@@ -16,7 +14,6 @@ public record DadosCadastroPaciente(
 
         @NotBlank
         String telefone,
-
         @NotBlank
         @Pattern(regexp = "\\d{8}")
         String cpf,

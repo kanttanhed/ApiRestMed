@@ -1,20 +1,20 @@
 package med.salazar.api.domain.domain;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import med.salazar.api.domain.dtos.DadosCadastroPaciente;
 
-import java.util.UUID;
-
-@Getter
-@NoArgsConstructor
-@AllArgsConstructor
-@EqualsAndHashCode(of = "id")
-@Entity(name = "Paciente")
+@Data
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@Entity
 @Table(name = "pacientes")
+@NoArgsConstructor
 public class Paciente {
 
     @Id
+    @EqualsAndHashCode.Include
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(nullable = false)

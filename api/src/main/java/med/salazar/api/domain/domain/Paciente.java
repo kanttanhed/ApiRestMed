@@ -30,9 +30,11 @@ public class Paciente {
     @Column(nullable = false)
     private Endereco enderecopaciente;
 
+    @Column(nullable = false)
     private Boolean ativo;
 
     public Paciente(DadosCadastroPaciente dadosCadastroPaciente){
+        this.ativo = true;
         this.nome = dadosCadastroPaciente.nome();
         this.email = dadosCadastroPaciente.email();
         this.telefone = dadosCadastroPaciente.telefone();

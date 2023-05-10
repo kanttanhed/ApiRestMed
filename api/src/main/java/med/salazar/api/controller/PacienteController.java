@@ -1,10 +1,10 @@
 package med.salazar.api.controller;
 
 import jakarta.validation.Valid;
-import med.salazar.api.domain.domain.Paciente;
+import med.salazar.api.domain.entity.Paciente;
 import med.salazar.api.domain.dtos.DadosCadastroPaciente;
 import med.salazar.api.domain.dtos.DadosListagemPaciente;
-import med.salazar.api.repository.PacienteRepository;
+import med.salazar.api.domain.repository.PacienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

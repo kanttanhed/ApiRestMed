@@ -1,7 +1,7 @@
 package med.salazar.api.domain.dtos;
 
-import med.salazar.api.domain.domain.Endereco;
-import med.salazar.api.domain.domain.Medico;
+import med.salazar.api.domain.entity.Endereco;
+import med.salazar.api.domain.entity.Medico;
 import med.salazar.api.domain.enums.Especialidade;
 
 public record DadosDetalhamentoMedico(Long id, String nome, String email, String crm, String telefone,

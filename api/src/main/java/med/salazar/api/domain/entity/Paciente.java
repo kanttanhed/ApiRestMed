@@ -1,4 +1,4 @@
-package med.salazar.api.domain.domain;
+package med.salazar.api.domain.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;

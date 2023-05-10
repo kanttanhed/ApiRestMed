@@ -5,8 +5,8 @@ import med.salazar.api.domain.dtos.DadosAtualizacaoMedico;
 import med.salazar.api.domain.dtos.DadosCadastroMedico;
 import med.salazar.api.domain.dtos.DadosDetalhamentoMedico;
 import med.salazar.api.domain.dtos.DadosListagemMedico;
-import med.salazar.api.domain.domain.Medico;
-import med.salazar.api.repository.MedicoRepository;
+import med.salazar.api.domain.entity.Medico;
+import med.salazar.api.domain.repository.MedicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -18,7 +18,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/medico")
